@@ -18,7 +18,7 @@
 
 ![alt text](https://github.com/RiteHist/ter-homework-3/blob/main/media/3.PNG?raw=true)
 
-Файл [disk_vm.tf](https://github.com/RiteHist/ter-homework-3/blob/main/src/count-vm.tf) и [for_each-vm.tf](https://github.com/RiteHist/ter-homework-3/blob/main/src/disk_vm.tf)
+Файл [disk_vm.tf](https://github.com/RiteHist/ter-homework-3/blob/main/src/count-vm.tf)
 
 ## Задание 4
 
