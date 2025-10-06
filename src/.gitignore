@@ -1,3 +1,4 @@
+*.ini
 # Local .terraform directories and files
 **/.terraform/*
 .terraform*
