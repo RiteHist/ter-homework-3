@@ -33,10 +33,10 @@ variable "vm_count" {
 
 variable "vm_names" {
   type = list(string)
-  default = ["web", "main", "replica"]
+  default = ["web", "main", "replica", "storage"]
 }
 
-variable "count_vm_resources" {
+variable "generic_vm_resources" {
   type = list(object({
     cores = number
     memory = number
@@ -72,5 +72,13 @@ variable "each_vm" {
     platform_id = string
     nat = bool
     disk_volume = number
+  }))
+}
+
+variable "vm_disk_params" {
+  type = list(object({
+    count = number
+    size = number
+    type = string
   }))
 }

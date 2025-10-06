@@ -1,11 +1,11 @@
 resource "yandex_compute_instance" "vm_web" {
     count = var.vm_count
-    platform_id = var.count_vm_resources[0].platform_id 
+    platform_id = var.generic_vm_resources[0].platform_id 
     name = "${var.vm_names[0]}-${count.index + 1}"
     resources {
-        cores = var.count_vm_resources[0].cores
-        memory = var.count_vm_resources[0].memory
-        core_fraction = var.count_vm_resources[0].core_fraction
+        cores = var.generic_vm_resources[0].cores
+        memory = var.generic_vm_resources[0].memory
+        core_fraction = var.generic_vm_resources[0].core_fraction
     }
     boot_disk {
         initialize_params {
@@ -13,11 +13,11 @@ resource "yandex_compute_instance" "vm_web" {
         }
     }
     scheduling_policy {
-        preemptible = var.count_vm_resources[0].preemptible
+        preemptible = var.generic_vm_resources[0].preemptible
     }
     network_interface {
         subnet_id = yandex_vpc_subnet.develop.id
-        nat = var.count_vm_resources[0].nat
+        nat = var.generic_vm_resources[0].nat
         security_group_ids = toset([yandex_vpc_security_group.example.id])
     }
     metadata = local.vm_metadata_ssh

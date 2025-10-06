@@ -1,4 +1,4 @@
-count_vm_resources = [ {
+generic_vm_resources = [ {
     cores = 2
     memory = 1
     core_fraction = 20
@@ -31,3 +31,8 @@ each_vm = [
         disk_volume = 15
     }
 ]
+vm_disk_params = [ {
+    count = 3
+    size = 1
+    type = "network-hdd"
+} ]
